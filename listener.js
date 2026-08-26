@@ -39,21 +39,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            // Create Firebase Authentication account
+            console.log("1. Creating Firebase Authentication user...");
+
             const userCredential =
-                await auth.createUserWithEmailAndPassword(email, password);
+                await auth.createUserWithEmailAndPassword(
+                    email,
+                    password
+                );
 
             const user = userCredential.user;
 
-            // Save additional user information in Firestore
-            await db.collection("users").doc(user.uid).set({
-                name: name,
-                email: user.email,
-                role: "standard",
-                createdAt: firebase.firestore.FieldValue.serverTimestamp()
-            });
+            console.log(
+                "2. Authentication created:",
+                user.uid
+            );
 
-            // Redirect after successful registration
+            console.log("3. Creating Firestore user document...");
+
+            await db
+                .collection("users")
+                .doc(user.uid)
+                .set({
+                    name: name,
+                    email: user.email,
+                    role: "standard",
+                    createdAt:
+                        firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+            console.log(
+                "4. Firestore user document created successfully."
+            );
+
+            console.log("5. Redirecting...");
+
             window.location.href = redirectUrl;
 
         } catch (error) {

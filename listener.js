@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             await db.collection("users").doc(user.uid).set({
                 name: name,
                 email: user.email,
+                role: "standard",
                 createdAt: firebase.firestore.FieldValue.serverTimestamp()
             });
 

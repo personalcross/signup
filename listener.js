@@ -8,13 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const redirectUrl = "https://personalcross.github.io/nosso-time/";
 
-    // Check if the user is already authenticated
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            window.location.href = redirectUrl;
-        }
-    });
-
     // Signup
     signupForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -38,9 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-
-            console.log("1. Creating Firebase Authentication user...");
-
             const userCredential =
                 await auth.createUserWithEmailAndPassword(
                     email,
@@ -48,13 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
             const user = userCredential.user;
-
-            console.log(
-                "2. Authentication created:",
-                user.uid
-            );
-
-            console.log("3. Creating Firestore user document...");
 
             await db
                 .collection("users")
@@ -66,12 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     createdAt:
                         firebase.firestore.FieldValue.serverTimestamp()
                 });
-
-            console.log(
-                "4. Firestore user document created successfully."
-            );
-
-            console.log("5. Redirecting...");
 
             window.location.href = redirectUrl;
 

@@ -8,20 +8,20 @@
     <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
-
-    <title>Signup | Estúdio Personal Cross</title>
+    
+    <title>Signup | EPC</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="shortcut icon" href="https://personalcross.github.io/assets/favicon/favicon.png">
     <link rel="stylesheet" href="https://personalcross.github.io/assets/variables.css">
     <link rel="stylesheet" href="https://personalcross.github.io/assets/global-style.css">
-    <link rel="stylesheet" href="https://personalcross.github.io/assets/responsive.css">
     <link rel="stylesheet" href="https://personalcross.github.io/assets/components/custom-header.css">
     <link rel="stylesheet" href="https://personalcross.github.io/assets/components/custom-nav.css">
-    <link rel="stylesheet" href="https://personalcross.github.io/assets/components/hamburguer.css">
-    <link rel="stylesheet" href="https://personalcross.github.io/assets/components/settings.css">
+    <link rel="stylesheet" href="https://personalcross.github.io/assets/components/hamburger.css">
     <link rel="stylesheet" href="./style.css">
 
+    <!-- must be the last one -->
+    <link rel="stylesheet" href="https://personalcross.github.io/assets/responsive.css">
 </head>
 
 <body>
@@ -33,7 +33,16 @@
                 <span></span>
                 <span></span>
             </button>
-            <span class="custom-nav-links"></span> <!-- Dynamically filled by JavaScript -->
+            <span class="custom-nav-links">
+                <a href="https://personalcross.github.io/home">Home</a>
+                <a href="https://personalcross.github.io/check-in">Check-in</a>
+                <a href="https://personalcross.github.io/modalities">Modalidades</a>
+                <a href="https://personalcross.github.io/nosso-time/">Nosso Time</a>
+                <a href="https://personalcross.github.io/perguntas-frequentes/">Perguntas Frequentes</a>
+                <a href="https://personalcross.github.io/sobre/">Sobre</a>
+            </span>
+            <img class="settings-icon" src="https://personalcross.github.io/assets/store/settings.png" alt="settings"
+                width="10%">
         </nav>
     </header>
 
@@ -58,22 +67,44 @@
                 </div>
                 <div class="error red-text" style="margin-top: 1rem;"></div>
             </form>
+            <p>Já possui conta? Clique <a href="https://personalcross.github.io/login/">aqui</a>.</p>
         </section>
-
-        <div class="highlight">
-            <p>
-                Signup
-            </p>
-        </div>
     </main>
     <footer>
-        © 2026 Estúdio Personal Cross · Todos os direitos reservados
+        <div class="highlight">
+            <div class="highlight-logo">
+                <div>
+                    <a href="#">
+                        <img src="https://personalcross.github.io/assets/store/epc-logo.png" alt="logo">
+                    </a>
+                    <!-- <p>Treino personalizado e ciência aplicada.</p> -->
+                </div>
+            </div>
+            <div class="highlight-social">
+                <p>Siga-nos:</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ep.cross?igsi=NGg0cnl1aTFvYTFr" aria-label="Instagram"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/instagram/instagram-tile.svg" alt="instagram">
+                    </a>
+                    <a href="https://www.instagram.com/ep.cross?igsi=NGg0cnl1aTFvYTFr" aria-label="LinkedIn"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/linkedin/linkedin-tile.svg" alt="linkedin">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © <span id="current-year"></span> Estúdio Personal Cross · Todos os direitos reservados
+        </div>
     </footer>
 
     <script src="cs.js"></script>
     <script src="config.js"></script>
     <script src="listener.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="hamburgerui.js"></script>
+    <script src="time.js"></script>
 
 </body>
 

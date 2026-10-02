@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("signup-password");
     const errorElement = document.querySelector(".error");
 
-    const redirectUrl = "https://personalcross.github.io/nosso-time/";
+    const redirectUrl = "https://personalcross.github.io/home/";
 
     // Signup
     signupForm.addEventListener("submit", async (event) => {
